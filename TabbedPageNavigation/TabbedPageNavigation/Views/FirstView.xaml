@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:TabbedPageNavigation.Controls"
+             mc:Ignorable="d"
+             BackgroundColor="LightGreen"
+             Title="First"
+             x:Class="TabbedPageNavigation.Views.FirstView"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Indexes}"
+                        Margin="5,10,5,0"
+                        ItemSizingStrategy="MeasureAllItems">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 HorizontalItemSpacing="10"
+                                 Span="2"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <controls:SquareGrid RowSpacing="0"
+                                         ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+
+                        <BoxView BackgroundColor="Orange"/>
+
+                    </controls:SquareGrid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -34,9 +35,9 @@ namespace QualityControl.Forms.Services.Navigation
             }
         }
 
-        public Task InitializeAsync()
+        public Task InitializeAsync(object parameter)
         {
-            return NavigateToAsync<MainViewModel>();
+            return NavigateToAsync<MainViewModel>(parameter);
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : BaseViewModel
@@ -99,7 +100,7 @@ namespace QualityControl.Forms.Services.Navigation
         {
             Page page = CreatePage(viewModelType, parameter);
 
-            if (page is MainPage)
+            if (page is MainView)
             {
                 Application.Current.MainPage = new NavigationPage(page);
             }
@@ -120,11 +121,29 @@ namespace QualityControl.Forms.Services.Navigation
             }
 
             await (page.BindingContext as BaseViewModel).InitializeAsync(parameter);
+
+            if (page is TabbedPage tabbedPage)
+                await InitializeTabbedPage(tabbedPage, parameter);
+        }
+
+        private async Task InitializeTabbedPage(TabbedPage tabbedPage, object parameter)
+        {
+            var tabbedPageViewModel = tabbedPage.BindingContext as ITabbedViewModel;
+            var viewModels = new List<BaseViewModel>(tabbedPage.Children.Count);
+
+            foreach (NavigationPage page in tabbedPage.Children)
+            {
+                var viewModel = page.CurrentPage.BindingContext as BaseViewModel;
+                await viewModel.InitializeAsync(parameter);
+                viewModels.Add(viewModel);
+            }
+
+            tabbedPageViewModel.AddTabsViewModels(viewModels);
         }
 
         private Type GetPageTypeForViewModel(Type viewModelType)
         {
-            var viewName = viewModelType.FullName.Replace("ViewModel", "Page");
+            var viewName = viewModelType.FullName.Replace("Model", string.Empty);
             var viewModelAssemblyName = viewModelType.GetTypeInfo().Assembly.FullName;
             var viewAssemblyName = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", viewName, viewModelAssemblyName);
             var viewType = Type.GetType(viewAssemblyName);

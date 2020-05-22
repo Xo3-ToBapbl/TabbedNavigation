@@ -3,19 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModelHelper="clr-namespace:TabbedPageNavigation.ViewModels.Base"
              mc:Ignorable="d"
-             BackgroundColor="LightBlue"
-             x:Class="TabbedPageNavigation.Views.FirstPage"
-             viewModelHelper:ViewModelHelper.AutoWireViewModel="true">
+             xmlns:viewModelHelper="clr-namespace:TabbedPageNavigation.ViewModels.Base"
+             BackgroundColor="LightPink"
+             Title="Third"
+             x:Class="TabbedPageNavigation.Views.ThirdView"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <Button WidthRequest="250"
                 HeightRequest="50"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Text="First Button"
-                BackgroundColor="AliceBlue"/>
+                Text="Fird Button"
+                BackgroundColor="AliceBlue"
+                Command="{Binding NavigateToNavigationPageCommand}"/>
     </ContentPage.Content>
 
 </ContentPage>

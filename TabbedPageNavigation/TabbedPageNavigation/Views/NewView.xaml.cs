@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TabbedPageNavigation.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewPage : ContentPage
+    public partial class NewView : ContentPage
     {
-        public NewPage()
+        public NewView()
         {
             InitializeComponent();
         }

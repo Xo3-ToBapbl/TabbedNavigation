@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModelHelper="clr-namespace:TabbedPageNavigation.ViewModels.Base"
              mc:Ignorable="d"
-             x:Class="TabbedPageNavigation.Views.NewPage"
-             viewModelHelper:ViewModelHelper.AutoWireViewModel="true">
+             Title="New View"
+             x:Class="TabbedPageNavigation.Views.NewView">
 
     <ContentPage.Content>
         <StackLayout>

@@ -12,7 +12,7 @@ namespace TabbedPageNavigation.ViewModels.Base
 
         protected BaseViewModel()
         {
-            NavigationService = new NavigationService();
+            //NavigationService = new NavigationService();
         }
 
         public virtual Task InitializeAsync(object navigationData)

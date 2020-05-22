@@ -46,8 +46,10 @@ namespace TabbedPageNavigation.ViewModels.Base
                 return;
             }
 
-            var viewModel = ComponentFactory.Resolve(viewModelType);
+            var viewModel = ComponentFactory.Resolve(viewModelType) as BaseViewModel;
             view.BindingContext = viewModel;
+
+            //await viewModel.InitializeAsync(null);
         }
     }
 }
