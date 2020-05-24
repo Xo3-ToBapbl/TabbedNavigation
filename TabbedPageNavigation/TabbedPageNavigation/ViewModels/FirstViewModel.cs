@@ -36,8 +36,8 @@ namespace TabbedPageNavigation.ViewModels
         public FirstViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Indexes = new List<int>(50);
-            for (int i = 0; i < 50; i++)
+            Indexes = new List<int>(49);
+            for (int i = 0; i < 49; i++)
                 Indexes.Add(i);
 
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);

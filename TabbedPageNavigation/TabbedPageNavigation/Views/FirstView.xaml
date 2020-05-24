@@ -17,21 +17,26 @@
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                                  HorizontalItemSpacing="10"
+                                 VerticalItemSpacing="0"
                                  Span="2"/>
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <controls:SquareGrid RowSpacing="0"
-                                         ColumnSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="10"/>
-                        </Grid.RowDefinitions>
+                    <controls:SquareView>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="5"/>
+                            </Grid.RowDefinitions>
 
-                        <BoxView BackgroundColor="Orange"/>
-
-                    </controls:SquareGrid>
+                            <BoxView BackgroundColor="Orange"/>
+                            <Label HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="Text"
+                                   TextColor="Black"/>
+                        </Grid>
+                    </controls:SquareView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
             
