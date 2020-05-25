@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace TabbedPageNavigation.ViewModels
 {
-    public class ThirdViewModel : ViewModelBase, IActiveAware
+    public class ThirdTabViewModel : ViewModelBase, IActiveAware
     {
         private bool isActive;
 
@@ -28,7 +28,7 @@ namespace TabbedPageNavigation.ViewModels
 
         public ICommand NavigateToNavigationPageCommand { get; }
 
-        public ThirdViewModel(INavigationService navigationService)
+        public ThirdTabViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
@@ -36,9 +36,14 @@ namespace TabbedPageNavigation.ViewModels
 
         public event EventHandler IsActiveChanged;
 
+        public override void Initialize(INavigationParameters parameters)
+        {
+            base.Initialize(parameters);
+        }
+
         private void NavigateToNavigationPage(object obj)
         {
-            NavigationService.NavigateAsync(nameof(NewView));
+            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ModalView)}", null, true);
         }
     }
 }

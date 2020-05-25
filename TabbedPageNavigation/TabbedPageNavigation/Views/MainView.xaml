@@ -3,18 +3,17 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            xmlns:viewModelHelper="clr-namespace:TabbedPageNavigation.ViewModels.Base"
+            xmlns:views="clr-namespace:TabbedPageNavigation.Views"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             mc:Ignorable="d"
             Title="Tabbed View"
-            xmlns:views="clr-namespace:TabbedPageNavigation.Views"
-            x:Class="TabbedPageNavigation.Views.MainView"
+            x:Class="TabbedPageNavigation.Views.MainTabView"
             android:TabbedPage.ToolbarPlacement="Bottom">
 
     <TabbedPage.Children>
-        <views:FirstView />
-        <views:SecondView />
-        <views:ThirdView />
+        <views:FirstTabView />
+        <views:SecondTabView />
+        <views:ThirdTabView />
     </TabbedPage.Children>
     
 </TabbedPage>

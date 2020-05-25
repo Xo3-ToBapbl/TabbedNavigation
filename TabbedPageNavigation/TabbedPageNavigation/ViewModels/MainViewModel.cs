@@ -9,9 +9,9 @@ namespace TabbedPageNavigation.ViewModels
 {
     public class MainViewModel : ViewModelBase /*ITabbedViewModel*/
     {
-        public FirstViewModel FirstViewModel { get; private set; }
-        public SecondViewModel SecondViewModel { get; private set; }
-        public ThirdViewModel FirdViewModel { get; private set; }
+        public FirstTabViewModel FirstViewModel { get; private set; }
+        public SecondTabViewModel SecondViewModel { get; private set; }
+        public ThirdTabViewModel FirdViewModel { get; private set; }
 
         public MainViewModel(INavigationService navigationService)
             : base(navigationService) { }

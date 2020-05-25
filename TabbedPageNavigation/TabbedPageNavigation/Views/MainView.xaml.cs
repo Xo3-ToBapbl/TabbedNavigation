@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace TabbedPageNavigation.Views
 {
-    public partial class MainView : TabbedPage
+    public partial class MainTabView : TabbedPage
     {
-        public MainView()
+        public MainTabView()
         {
             InitializeComponent();
         }

@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Prism;
 using Prism.Navigation;
+using Prism.Navigation.TabbedPages;
+
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.ViewModels.Base;
 using TabbedPageNavigation.Views;
@@ -10,13 +12,14 @@ using Xamarin.Forms;
 
 namespace TabbedPageNavigation.ViewModels
 {
-    public class SecondViewModel : ViewModelBase, IActiveAware
+    public class SecondTabViewModel : ViewModelBase, IActiveAware
     {
         private bool isActive;
 
         public event EventHandler IsActiveChanged;
 
         public ICommand NavigateToNavigationPageCommand { get; }
+        public ICommand SwitchTabCommand { get; }
 
         public bool IsActive 
         { 
@@ -28,16 +31,21 @@ namespace TabbedPageNavigation.ViewModels
             }
         }
 
-        public SecondViewModel(INavigationService navigationService)
+        public SecondTabViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
+            SwitchTabCommand = new Command(SwitchTab);
         }
 
+        private void SwitchTab(object obj)
+        {
+            NavigationService.SelectTabAsync(nameof(ThirdTabView));
+        }
 
         private void NavigateToNavigationPage(object obj)
         {
-            NavigationService.NavigateAsync(nameof(NewView), new NavigationParameters("param=param_second"));
+            NavigationService.NavigateAsync(nameof(NonModalView), new NavigationParameters("param=param_second"));
         }
 
         public override void Initialize(INavigationParameters parameters)

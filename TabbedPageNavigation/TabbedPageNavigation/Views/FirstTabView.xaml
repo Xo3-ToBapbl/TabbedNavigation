@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              BackgroundColor="LightGreen"
              Title="First"
-             x:Class="TabbedPageNavigation.Views.FirstView"
+             x:Class="TabbedPageNavigation.Views.FirstTabView"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>

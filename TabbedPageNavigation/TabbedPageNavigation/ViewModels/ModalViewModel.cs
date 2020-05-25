@@ -1,13 +1,29 @@
-﻿using Prism.Navigation;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+
+using Prism.Navigation;
+
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.ViewModels.Base;
+using TabbedPageNavigation.Views;
+using Xamarin.Forms;
 
 namespace TabbedPageNavigation.ViewModels
 {
-    public class NewViewModel : ViewModelBase
+    public class ModalViewModel : ViewModelBase
     {
-        public NewViewModel(INavigationService navigationService)
-            : base(navigationService) { }
+        public ICommand NavigateToNextModalCommand { get; }
+
+        public ModalViewModel(INavigationService navigationService)
+            : base(navigationService) 
+        {
+            NavigateToNextModalCommand = new Command(NavigateToNextModal);
+        }
+
+        private void NavigateToNextModal(object obj)
+        {
+            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ModalView)}", null, true);
+        }
 
         public override void Initialize(INavigationParameters parameters)
         {

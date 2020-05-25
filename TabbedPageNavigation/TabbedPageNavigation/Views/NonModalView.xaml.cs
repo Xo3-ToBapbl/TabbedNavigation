@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace TabbedPageNavigation.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewView : ContentPage
+    public partial class NonModalView : ContentPage
     {
-        public NewView()
+        public NonModalView()
         {
             InitializeComponent();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return base.OnBackButtonPressed();
         }
     }
 }

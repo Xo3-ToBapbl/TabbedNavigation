@@ -5,13 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="New View"
-             x:Class="TabbedPageNavigation.Views.NewView">
+             NavigationPage.HasNavigationBar="True"
+             x:Class="TabbedPageNavigation.Views.NonModalView">
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is New Content Page"
+            <Label Text="{Binding Value}"
+                FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <Button WidthRequest="250"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Margin="0,0,0,50"
+                VerticalOptions="Center"
+                Text="To Common Navigation Page"
+                BackgroundColor="AliceBlue"
+                Command="{Binding NavigateToNavigationPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 

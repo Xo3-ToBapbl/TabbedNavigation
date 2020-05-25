@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace TabbedPageNavigation.ViewModels
 {
-    public class FirstViewModel : ViewModelBase, IActiveAware
+    public class FirstTabViewModel : ViewModelBase, IActiveAware
     {
         private bool isActive;
 
@@ -33,7 +33,7 @@ namespace TabbedPageNavigation.ViewModels
             }
         }
 
-        public FirstViewModel(INavigationService navigationService)
+        public FirstTabViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Indexes = new List<int>(49);
@@ -51,7 +51,7 @@ namespace TabbedPageNavigation.ViewModels
         private void NavigateToNavigationPage(object obj)
         {
             this.Log();
-            NavigationService.NavigateAsync(nameof(NewView));
+            NavigationService.NavigateAsync(nameof(NonModalView));
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)

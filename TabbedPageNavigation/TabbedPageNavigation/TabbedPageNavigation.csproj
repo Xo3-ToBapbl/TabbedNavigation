@@ -11,10 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\Navigation\NavigationService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
     <PackageReference Include="SimpleInjector" Version="4.10.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />  
@@ -22,34 +18,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ThirdView.xaml.cs">
-      <DependentUpon>ThirdView.xaml</DependentUpon>
+    <Compile Update="Views\ModalView.xaml.cs">
+      <DependentUpon>ModalView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\FirstView.xaml.cs">
-      <DependentUpon>FirstView.xaml</DependentUpon>
+    <Compile Update="Views\ThirdTabView.xaml.cs">
+      <DependentUpon>ThirdTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FirstTabView.xaml.cs">
+      <DependentUpon>FirstTabView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\NewView.xaml.cs">
-      <DependentUpon>NewView.xaml</DependentUpon>
+    <Compile Update="Views\NonModalView.xaml.cs">
+      <DependentUpon>NonModalView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\SecondView.xaml.cs">
-      <DependentUpon>SecondView.xaml</DependentUpon>
+    <Compile Update="Views\SecondTabView.xaml.cs">
+      <DependentUpon>SecondTabView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ThirdView.xaml">
+    <EmbeddedResource Update="Views\ThirdTabView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FirstView.xaml">
+    <EmbeddedResource Update="Views\FirstTabView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NewView.xaml">
+    <EmbeddedResource Update="Views\NonModalView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SecondView.xaml">
+    <EmbeddedResource Update="Views\SecondTabView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

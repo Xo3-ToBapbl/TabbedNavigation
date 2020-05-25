@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace TabbedPageNavigation.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ThirdView : ContentPage
+    public partial class SecondTabView : ContentPage
     {
-        public ThirdView()
+        public SecondTabView()
         {
             InitializeComponent();
         }

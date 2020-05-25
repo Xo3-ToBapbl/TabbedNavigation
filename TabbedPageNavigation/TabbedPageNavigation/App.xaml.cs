@@ -1,22 +1,22 @@
-﻿using System.Threading.Tasks;
+﻿using Prism;
+using Prism.Common;
+using Prism.Ioc;
 
-using QualityControl.Forms.Services.Navigation;
-
-using TabbedPageNavigation.Services.DependencyResolver;
-using TabbedPageNavigation.Services.Ioc;
+using TabbedPageNavigation.Extensions;
+using TabbedPageNavigation.ViewModels;
+using TabbedPageNavigation.Views;
 
 using Xamarin.Forms;
-
-using Prism;
-using Prism.Ioc;
-using TabbedPageNavigation.Views;
-using TabbedPageNavigation.ViewModels;
-using TabbedPageNavigation.Extensions;
 
 namespace TabbedPageNavigation
 {
     public partial class App 
     {
+        public static Page CurrentPage
+        {
+            get => PageUtilities.GetCurrentPage(Current.MainPage);
+        }
+
         public App() : this(null) { }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
@@ -26,17 +26,18 @@ namespace TabbedPageNavigation
             InitializeComponent();
 
             this.Log();
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabView)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
-            containerRegistry.RegisterForNavigation<FirstView, FirstViewModel>();
-            containerRegistry.RegisterForNavigation<SecondView, SecondViewModel>();
-            containerRegistry.RegisterForNavigation<ThirdView, ThirdViewModel>();
-            containerRegistry.RegisterForNavigation<NewView, NewViewModel>();
+            containerRegistry.RegisterForNavigation<MainTabView, MainViewModel>();
+            containerRegistry.RegisterForNavigation<FirstTabView, FirstTabViewModel>();
+            containerRegistry.RegisterForNavigation<SecondTabView, SecondTabViewModel>();
+            containerRegistry.RegisterForNavigation<ThirdTabView, ThirdTabViewModel>();
+            containerRegistry.RegisterForNavigation<NonModalView, NonModalViewModel>();
+            containerRegistry.RegisterForNavigation<ModalView, ModalViewModel>();
         }
     }
 }
