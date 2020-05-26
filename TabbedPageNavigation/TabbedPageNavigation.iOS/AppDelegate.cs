@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
-using TabbedPageNavigation.iOS.Initializer;
+using TabbedPageNavigation.Droid.Initializer;
 using UIKit;
 
 namespace TabbedPageNavigation.iOS

@@ -36,9 +36,6 @@
     <Compile Update="Views\SecondTabView.xaml.cs">
       <DependentUpon>SecondTabView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Dialogs\DemoDialog.xaml.cs">
-      <DependentUpon>InfoDialog.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -53,10 +50,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SecondTabView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Dialogs\DemoDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

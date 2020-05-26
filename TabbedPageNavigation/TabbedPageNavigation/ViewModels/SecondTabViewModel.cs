@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Prism;
-using Prism.Common;
 using Prism.Navigation;
 using Prism.Navigation.TabbedPages;
-using Prism.Services.Dialogs;
+
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.ViewModels.Base;
 using TabbedPageNavigation.Views;
@@ -15,16 +14,13 @@ namespace TabbedPageNavigation.ViewModels
 {
     public class SecondTabViewModel : ViewModelBase, IActiveAware
     {
-        private readonly IDialogService _dialogService;
-
         private bool isActive;
-        
+
         public event EventHandler IsActiveChanged;
 
         public ICommand NavigateToNavigationPageCommand { get; }
         public ICommand SwitchTabCommand { get; }
-        public ICommand ShowDialogCommand { get; }
-        
+
         public bool IsActive 
         { 
             get => isActive;
@@ -35,25 +31,11 @@ namespace TabbedPageNavigation.ViewModels
             }
         }
 
-        public SecondTabViewModel(INavigationService navigationService,
-                                  IDialogService dialogService)
+        public SecondTabViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            _dialogService = dialogService;
-            
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
             SwitchTabCommand = new Command(SwitchTab);
-            ShowDialogCommand = new Command(ShowDialog);
-        }
-
-        private void ShowDialog()
-        {
-            var parameters = new DialogParameters
-            {
-                { "title", "Connection Lost!" },
-                { "message", "We seem to have lost network connectivity" }
-            };
-            var result = _dialogService.ShowDialogAsync("DemoDialog", parameters);
         }
 
         private void SwitchTab(object obj)
