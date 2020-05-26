@@ -29,6 +29,14 @@
                     Text="To Third Tab"
                     BackgroundColor="AliceBlue"
                     Command="{Binding SwitchTabCommand}"/>
+                    
+            <Button WidthRequest="250"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Text="Show dialog"
+                    BackgroundColor="AliceBlue"
+                    Command="{Binding ShowDialogCommand}"/>
             
         </StackLayout>
     </ContentPage.Content>
