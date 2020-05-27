@@ -1,8 +1,14 @@
-﻿using Prism;
+﻿using System.Net.Http;
+
+using Prism;
 using Prism.Common;
+using Prism.DryIoc;
 using Prism.Ioc;
 
+using Refit;
+
 using TabbedPageNavigation.Extensions;
+using TabbedPageNavigation.Interfaces.Services.Api;
 using TabbedPageNavigation.ViewModels;
 using TabbedPageNavigation.Views;
 
