@@ -10,13 +10,25 @@
              x:Class="TabbedPageNavigation.Views.ModalView">
     
     <ContentPage.Content>
-        <Button WidthRequest="250"
-                HeightRequest="50"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Text="Modal View: Navigate Back"
-                BackgroundColor="AliceBlue"
-                Command="{Binding NavigateToNextModalCommand}"/>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Button WidthRequest="250"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,0,0,20"
+                    Text="Navigate To Next Modal View"
+                    BackgroundColor="AliceBlue"
+                    Command="{Binding NavigateToNextModalCommand}"/>
+
+            <Button WidthRequest="250"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Text="Navigate Back"
+                    BackgroundColor="AliceBlue"
+                    Command="{Binding NavigateBackCommand}"/>
+        </StackLayout>
     </ContentPage.Content>
 
 </ContentPage>

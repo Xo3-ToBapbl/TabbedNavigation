@@ -17,11 +17,13 @@ namespace TabbedPageNavigation.ViewModels
         public string Value => $"This is New Navigation Page {DateTime.Now.Second}";
 
         public ICommand NavigateToNavigationPageCommand { get; }
+        public ICommand NavigateBackCommand { get; }
 
         public NonModalViewModel(INavigationService navigationService)
             : base(navigationService) 
         {
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
+            NavigateBackCommand = new Command(NavigateBack);
         }
 
         public override void Initialize(INavigationParameters parameters)
@@ -29,6 +31,12 @@ namespace TabbedPageNavigation.ViewModels
             this.Log(parameters.GetValue<string>("param"));
             base.Initialize(parameters);
         }
+
+        private void NavigateBack(object obj)
+        {
+            NavigationService.GoBackAsync();
+        }
+
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
         {

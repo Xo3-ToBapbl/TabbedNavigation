@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Prism.Navigation;
@@ -13,11 +14,18 @@ namespace TabbedPageNavigation.ViewModels
     public class ModalViewModel : ViewModelBase
     {
         public ICommand NavigateToNextModalCommand { get; }
+        public ICommand NavigateBackCommand { get; }
 
         public ModalViewModel(INavigationService navigationService)
             : base(navigationService) 
         {
             NavigateToNextModalCommand = new Command(NavigateToNextModal);
+            NavigateBackCommand = new Command(NavigateBack);
+        }
+
+        private void NavigateBack(object obj)
+        {
+            NavigationService.GoBackAsync();
         }
 
         private void NavigateToNextModal(object obj)
