@@ -27,6 +27,7 @@ namespace TabbedPageNavigation.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState); 
 

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 using Prism;
 using Prism.Navigation;
-
+using Prism.Services.Dialogs;
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.ViewModels.Base;
 using TabbedPageNavigation.Views;
@@ -26,12 +26,25 @@ namespace TabbedPageNavigation.ViewModels
             }
         }
 
-        public ICommand NavigateToNavigationPageCommand { get; }
+        private IDialogService dialogService;
 
-        public ThirdTabViewModel(INavigationService navigationService)
+        public ICommand NavigateToNavigationPageCommand { get; }
+        public ICommand ShowDialogCommand { get; }
+
+        public ThirdTabViewModel(
+            INavigationService navigationService,
+            IDialogService dialogService)
             : base(navigationService)
         {
+            this.dialogService = dialogService;
+
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
+            ShowDialogCommand = new Command(ShowDialog);
+        }
+
+        private void ShowDialog(object obj)
+        {
+            
         }
 
         public event EventHandler IsActiveChanged;

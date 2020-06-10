@@ -1,4 +1,6 @@
-﻿using TabbedPageNavigation.Extensions;
+﻿using Rg.Plugins.Popup.Services;
+
+using TabbedPageNavigation.Extensions;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,6 +23,11 @@ namespace TabbedPageNavigation.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+        }
+
+        private void Button_Clicked(object sender, System.EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new DialogPage());
         }
     }
 }

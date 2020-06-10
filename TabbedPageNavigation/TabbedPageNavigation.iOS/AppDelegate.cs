@@ -23,7 +23,8 @@ namespace TabbedPageNavigation.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            Xamarin.Forms.Forms.Init();
+            Rg.Plugins.Popup.Popup.Init();
 
             LoadApplication(new App(new IosInitializer()));
             return base.FinishedLaunching(app, options);
