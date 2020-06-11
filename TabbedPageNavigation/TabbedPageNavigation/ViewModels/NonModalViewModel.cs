@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Prism.Navigation;
-
+using Prism.Services.Dialogs;
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.ViewModels.Base;
 using TabbedPageNavigation.Views;
@@ -16,14 +16,27 @@ namespace TabbedPageNavigation.ViewModels
     {
         public string Value => $"This is New Navigation Page {DateTime.Now.Second}";
 
+        private IDialogService dialogService;
+
         public ICommand NavigateToNavigationPageCommand { get; }
         public ICommand NavigateBackCommand { get; }
+        public ICommand ShowPrismDialogCommand { get; }
 
-        public NonModalViewModel(INavigationService navigationService)
+        public NonModalViewModel(
+            INavigationService navigationService,
+            IDialogService dialogService)
             : base(navigationService) 
         {
+            this.dialogService = dialogService;
+
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
             NavigateBackCommand = new Command(NavigateBack);
+            ShowPrismDialogCommand = new Command(ShowPrismDialog);
+        }
+
+        private void ShowPrismDialog(object obj)
+        {
+            dialogService.ShowErrorMessage("You have successfully rejected this job.");
         }
 
         public override void Initialize(INavigationParameters parameters)

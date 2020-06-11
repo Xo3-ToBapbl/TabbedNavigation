@@ -24,10 +24,5 @@ namespace TabbedPageNavigation.Views
         {
             base.OnDisappearing();
         }
-
-        private void Button_Clicked(object sender, System.EventArgs e)
-        {
-            PopupNavigation.Instance.PushAsync(new DialogPage());
-        }
     }
 }

@@ -20,6 +20,7 @@ namespace TabbedPageNavigation.ViewModels
 
         public ICommand NavigateToNavigationPageCommand { get; }
         public ICommand SwitchTabCommand { get; }
+        public ICommand NavigateToModalPageCommand { get; }
 
         public bool IsActive 
         { 
@@ -35,7 +36,13 @@ namespace TabbedPageNavigation.ViewModels
             : base(navigationService)
         {
             NavigateToNavigationPageCommand = new Command(NavigateToNavigationPage);
+            NavigateToModalPageCommand = new Command(NavigateToModalPage);
             SwitchTabCommand = new Command(SwitchTab);
+        }
+
+        private void NavigateToModalPage(object obj)
+        {
+            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(ModalView)}", null, true);
         }
 
         private void SwitchTab(object obj)

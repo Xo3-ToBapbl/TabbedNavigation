@@ -13,23 +13,32 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand"
                      VerticalOptions="CenterAndExpand">
+
             <Button WidthRequest="250"
                     HeightRequest="50"
                     HorizontalOptions="Center"
                     Margin="0,0,0,50"
                     VerticalOptions="Center"
-                    Text="Modal Navigation"
+                    Text="Show Action Dialog"
                     BackgroundColor="AliceBlue"
-                    Command="{Binding NavigateToNavigationPageCommand}"/>
+                    Command="{Binding ShowActionDialogCommand}"/>
+
+            <Button WidthRequest="250"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,50"
+                    VerticalOptions="Center"
+                    Text="Show Accept Dialog"
+                    BackgroundColor="AliceBlue"
+                    Command="{Binding ShowAcceptDialogCommand}"/>
 
             <Button WidthRequest="250"
                     HeightRequest="50"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Text="Show dialog"
+                    Text="Show Reject Dialog"
                     BackgroundColor="AliceBlue"
-                    Clicked="Button_Clicked"/>
-            <!--Command="{Binding ShowDialogCommand}"-->
+                    Command="{Binding ShowRejectDialogCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 
