@@ -5,12 +5,16 @@
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TabbedPageNavigation.Views.Dialogs.ConfirmationDialog">
+             x:Class="TabbedPageNavigation.Views.Dialogs.ConfirmationDialog"
+             CloseWhenBackgroundIsClicked="False">
 
-    <Grid BackgroundColor="WhiteSmoke">
+    <Grid BackgroundColor="WhiteSmoke"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center">
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
@@ -22,6 +26,18 @@
                VerticalOptions="CenterAndExpand" 
                HorizontalOptions="CenterAndExpand" 
                Grid.ColumnSpan="2"/>
+
+        <Button x:Name="okButton"
+                Text="Ok"
+                Grid.Row="1"
+                Grid.Column="0"
+                Clicked="OkButtonClicked"/>
+
+        <Button x:Name="cancelButton"
+                Text="Cancel"
+                Grid.Row="1"
+                Grid.Column="1"
+                Clicked="CancelButtonClicked"/>
 
         <Button />
     </Grid>

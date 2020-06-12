@@ -8,6 +8,7 @@ namespace TabbedPageNavigation.Enums
     {
         Accept,
         Reject,
-        Action
+        Action,
+        Confirmation
     }
 }

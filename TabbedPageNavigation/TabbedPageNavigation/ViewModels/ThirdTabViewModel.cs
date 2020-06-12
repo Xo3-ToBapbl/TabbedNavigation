@@ -32,6 +32,7 @@ namespace TabbedPageNavigation.ViewModels
         public ICommand ShowAcceptDialogCommand { get; }
         public ICommand ShowRejectDialogCommand { get; }
         public ICommand ShowActionDialogCommand { get; }
+        public ICommand ShowConfirmationDialogCommand { get; }
 
         public event EventHandler IsActiveChanged;
 
@@ -44,6 +45,12 @@ namespace TabbedPageNavigation.ViewModels
             ShowAcceptDialogCommand = new Command(ShowAcceptDialog);
             ShowRejectDialogCommand = new Command(ShowRejectDialog);
             ShowActionDialogCommand = new Command(ShowActionDialog);
+            ShowConfirmationDialogCommand = new Command(ShowConfirmationDialog);
+        }
+
+        private async void ShowConfirmationDialog(object obj)
+        {
+            bool result = await dialogService.ShowConfirmationDialog("Do you want or not?");
         }
 
         private async void ShowActionDialog(object obj)
