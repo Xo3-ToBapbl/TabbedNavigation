@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPageNavigation.Androi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPageNavigation.iOS", "TabbedPageNavigation\TabbedPageNavigation.iOS\TabbedPageNavigation.iOS.csproj", "{76A45BE7-117D-46E6-9832-AA01CEBA8A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPageNavigation", "TabbedPageNavigation\TabbedPageNavigation\TabbedPageNavigation.csproj", "{B900C642-92B4-46D4-9F22-C8A1BCC1D919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabbedPageNavigation", "TabbedPageNavigation\TabbedPageNavigation\TabbedPageNavigation.csproj", "{B900C642-92B4-46D4-9F22-C8A1BCC1D919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,7 +38,6 @@ Global
 		{50F19F29-BFC2-43D3-876B-D7508E392B40}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{50F19F29-BFC2-43D3-876B-D7508E392B40}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{76A45BE7-117D-46E6-9832-AA01CEBA8A39}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{76A45BE7-117D-46E6-9832-AA01CEBA8A39}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{76A45BE7-117D-46E6-9832-AA01CEBA8A39}.Debug|Any CPU.Deploy.0 = Debug|iPhone
 		{76A45BE7-117D-46E6-9832-AA01CEBA8A39}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{76A45BE7-117D-46E6-9832-AA01CEBA8A39}.Debug|iPhone.Build.0 = Debug|iPhone

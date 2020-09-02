@@ -4,11 +4,13 @@ using Prism;
 using Prism.Common;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Navigation;
 
 using Refit;
 
 using TabbedPageNavigation.Extensions;
 using TabbedPageNavigation.Interfaces.Services.Api;
+using TabbedPageNavigation.Service;
 using TabbedPageNavigation.ViewModels;
 using TabbedPageNavigation.Views;
 
@@ -32,7 +34,7 @@ namespace TabbedPageNavigation
             InitializeComponent();
 
             this.Log();
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainTabView)}");
+            await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LaunchView)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -44,6 +46,7 @@ namespace TabbedPageNavigation
             containerRegistry.RegisterForNavigation<ThirdTabView, ThirdTabViewModel>();
             containerRegistry.RegisterForNavigation<NonModalView, NonModalViewModel>();
             containerRegistry.RegisterForNavigation<ModalView, ModalViewModel>();
+            containerRegistry.RegisterForNavigation<LaunchView, LaunchViewModel>();
         }
     }
 }

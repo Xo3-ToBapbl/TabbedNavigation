@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabbedPageNavigation.Views.LaunchView"
+             BackgroundColor="Bisque"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button WidthRequest="250"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,0,250,50"
+                    Text="To Root Main View"
+                    BackgroundColor="AliceBlue"
+                    Command="{Binding NavigateToNavigationPageCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

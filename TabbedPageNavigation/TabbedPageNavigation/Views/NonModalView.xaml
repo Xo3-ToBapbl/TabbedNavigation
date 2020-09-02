@@ -7,6 +7,11 @@
              Title="New View"
              NavigationPage.HasNavigationBar="True"
              x:Class="TabbedPageNavigation.Views.NonModalView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="WOW"
+                     Order="Primary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>
